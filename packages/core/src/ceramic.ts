@@ -55,6 +55,8 @@ const TESTING = process.env.NODE_ENV == 'test'
 const TRAILING_SLASH = /\/$/ // slash at the end of the string
 
 const DEFAULT_ANCHOR_SERVICE_URLS = {
+  [Networks.AKAMAIN]: 'https://main-anchor.akroma.org',
+  [Networks.AKATEST]: 'https://test-anchor.akroma.org',
   [Networks.MAINNET]: 'https://cas.3boxlabs.com',
   [Networks.ELP]: 'https://cas.3boxlabs.com',
   [Networks.TESTNET_CLAY]: 'https://cas-clay.3boxlabs.com',
@@ -65,6 +67,8 @@ const DEFAULT_ANCHOR_SERVICE_URLS = {
 const DEFAULT_LOCAL_ETHEREUM_RPC = 'http://localhost:7545' // default Ganache port
 
 const SUPPORTED_CHAINS_BY_NETWORK = {
+  [Networks.AKAMAIN]: ['eip155:200625'], // Akroma mainnet
+  [Networks.AKATEST]: ['eip155:200624'], // Akroma testnet
   [Networks.MAINNET]: ['eip155:1'], // Ethereum mainnet
   [Networks.ELP]: ['eip155:1'], // Ethereum mainnet
   [Networks.TESTNET_CLAY]: ['eip155:3', 'eip155:4'], // Ethereum Ropsten, Rinkeby
@@ -279,6 +283,14 @@ export class Ceramic implements CeramicApi {
 
     let pubsubTopic
     switch (networkName) {
+      case Networks.AKAMAIN: {
+        pubsubTopic = '/akroma/main'
+        break
+      }
+      case Networks.AKATEST: {
+        pubsubTopic = '/akroma/test'
+        break
+      }
       case Networks.MAINNET: {
         pubsubTopic = '/ceramic/mainnet'
         break
