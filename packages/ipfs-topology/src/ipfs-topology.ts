@@ -5,6 +5,10 @@ import { Multiaddr } from 'multiaddr'
 
 const PEER_FILE_URLS = (ceramicNetwork: Networks): string | null => {
   switch (ceramicNetwork) {
+    case Networks.AKAMAIN:
+      return null
+    case Networks.AKATEST:
+      return null
     case Networks.MAINNET:
     case Networks.ELP:
       return 'https://raw.githubusercontent.com/ceramicnetwork/peerlist/main/mainnet.json'
@@ -53,6 +57,10 @@ const BASE_BOOTSTRAP_LIST = (ceramicNetwork: Networks): Array<Multiaddr> | null 
           '/dns4/go-ipfs-ceramic-private-cas-clay-external.3boxlabs.com/tcp/4011/ws/p2p/QmbeBTzSccH8xYottaYeyVX8QsKyox1ExfRx7T1iBqRyCd'
         ),
       ]
+    case Networks.AKAMAIN:
+      return null
+    case Networks.AKATEST:
+      return null
     case Networks.DEV_UNSTABLE:
     case Networks.LOCAL:
     case Networks.INMEMORY:
@@ -87,7 +95,7 @@ export class IpfsTopology {
     readonly ceramicNetwork: string,
     readonly logger: DiagnosticsLogger,
     readonly period: number = DEFAULT_PEER_DISCOVERY_PERIOD
-  ) {}
+  ) { }
 
   /**
    * Connect to custom peer list
@@ -143,8 +151,7 @@ export class IpfsTopology {
 
     if (filteredBootstrapList.length === bootstrapList.length) {
       this.logger.warn(
-        `This node with peerId ${myPeerId.toString()} is not included in the peer list for Ceramic network ${
-          this.ceramicNetwork
+        `This node with peerId ${myPeerId.toString()} is not included in the peer list for Ceramic network ${this.ceramicNetwork
         }. It will not be discoverable by other nodes in the network, and so data created against this node will not be available to the rest of the network.`
       )
     }
