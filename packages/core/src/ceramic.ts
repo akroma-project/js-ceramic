@@ -55,7 +55,7 @@ const TESTING = process.env.NODE_ENV == 'test'
 const TRAILING_SLASH = /\/$/ // slash at the end of the string
 
 const DEFAULT_ANCHOR_SERVICE_URLS = {
-  [Networks.AKAMAIN]: 'https://main-anchor.akroma.org',
+  [Networks.AKAMAIN]: 'https://anchor.akroma.network',
   [Networks.AKATEST]: 'https://test-anchor.akroma.org',
   [Networks.MAINNET]: 'https://cas.3boxlabs.com',
   [Networks.ELP]: 'https://cas.3boxlabs.com',
