@@ -56,7 +56,8 @@
     "dids": "^3.0.0-alpha.12",
     "ipfs-core-types": "~0.9.0",
     "json-schema-to-typescript": "^10.1.5",
-    "typescript-json-schema": "^0.52.0"
+    "typescript-json-schema": "^0.52.0",
+    "typescript": "^4.5.4"
   },
   "gitHead": "34eeee25597b0a60def72906c26d3afd6230aaf1"
 }

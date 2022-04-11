@@ -36,6 +36,9 @@
     "uint8arrays": "^3.0.0",
     "varint": "^6.0.0"
   },
+  "devDependencies": {
+    "typescript": "^4.5.4"
+  },
   "publishConfig": {
     "access": "public"
   },

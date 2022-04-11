@@ -57,7 +57,8 @@
     "@taquito/signer": "^11.2.0",
     "eth-sig-util": "^3.0.1",
     "ganache-core": "^2.13.2",
-    "near-api-js": "^0.44.2"
+    "near-api-js": "^0.44.2",
+    "typescript": "^4.5.4"
   },
   "gitHead": "34eeee25597b0a60def72906c26d3afd6230aaf1"
 }
